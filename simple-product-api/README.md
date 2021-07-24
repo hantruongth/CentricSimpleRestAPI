@@ -7,13 +7,8 @@ URL: http://localhost:8080/h2-console/ <br/>
 JDBC URL: jdbc:h2:mem:centric<br/>
 Username:centric<br/>
 Password:<br/>
-<img src="simple-product-api/src/main/resources/static/images/h2.JPG" width="600"/><br/>
-<img src="simple-product-api/src/main/resources/static/images/db.png" width="800"/><br/>
-
-
-<h2>Run Application</h2>
-Windows: mvnw spring-boot:run <br/>
-Linux: ./mvnw spring-boot:run
+<img src="src/main/resources/static/images/h2.JPG" width="600"/><br/>
+<img src="src/main/resources/static/images/db.png" width="800"/><br/>
 
 
 <h2>Add New Product</h2>
@@ -50,7 +45,7 @@ POST - http://localhost:8080/v1/products
     "created_at": "2021-07-23T22:14:57Z"
 }
 </code></pre>
-<img src="simple-product-api/src/main/resources/static/images/add.png" width="500"/>
+<img src="src/main/resources/static/images/add.png" width="500"/>
 
 <h2>Search Product by Category Name</h2>
 GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy=createdDate
@@ -130,4 +125,4 @@ GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy
 ]
 
 </code></pre>
-<img src="simple-product-api/src/main/resources/static/images/search.png" width="600"/>
+<img src="src/main/resources/static/images/search.png" width="600"/>
