@@ -1,5 +1,3 @@
-# CentricSimpleRestAPI
-
 <h1>Centric Simple REST API</h1>
 
 <h2>H2 Database</h2>
@@ -12,8 +10,8 @@ Password:<br/>
 
 
 <h2>Run Application</h2>
-Windows: mvnw spring-boot:run <br/>
-Linux: ./mvnw spring-boot:run
+<strong>Windows</strong>: mvnw spring-boot:run <br/>
+<strong>Linux</strong>: ./mvnw spring-boot:run
 
 
 <h2>Add New Product</h2>
