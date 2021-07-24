@@ -8,7 +8,6 @@ Password:<br/>
 <img src="simple-product-api/src/main/resources/static/images/h2.JPG" width="600"/><br/>
 <img src="simple-product-api/src/main/resources/static/images/db.png" width="800"/><br/>
 
-
 <h2>Run Application</h2>
 <strong>Windows</strong>: mvnw spring-boot:run <br/>
 <strong>Linux</strong>: ./mvnw spring-boot:run
@@ -129,3 +128,8 @@ GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy
 
 </code></pre>
 <img src="simple-product-api/src/main/resources/static/images/search.png" width="600"/>
+
+
+<h2> API Documentation</h2>
+URL: http://localhost:8080/swagger-ui/ <br/>
+<img src="simple-product-api/src/main/resources/static/images/apidoc.png" width="600"/>

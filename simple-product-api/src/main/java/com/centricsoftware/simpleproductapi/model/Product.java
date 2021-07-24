@@ -2,7 +2,6 @@ package com.centricsoftware.simpleproductapi.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -17,14 +16,14 @@ import java.util.UUID;
 public class Product implements DatabaseEntity{
 
     @Id
-    @Column(name = "product_id", nullable = false)
+    @Column(name = "product_id")
     @GeneratedValue
-    @NotBlank(message = "Product id is required!")
+    @NotNull
     private UUID id;
 
-    @Column(name = "product_name", nullable = false)
-    @NotEmpty(message = "Product brand is required!")
-    @Size(min = 5, max = 100, message = "Product name must be more than 5 characters and can not be more than 100 characters")
+    @Column(name = "product_name")
+    @NotNull(message = "{required.error.message}")
+    @Size(min = 5, max = 100, message = "{name.length.required.error.message}")
     private String name;
 
     @Column(name = "product_desc")
@@ -33,12 +32,12 @@ public class Product implements DatabaseEntity{
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id")
-    @NotNull(message = "Product brand is required!")
+    @NotNull(message = "{required.error.message}")
     private Brand brand;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    @NotNull(message = "Product category is required!")
+    @NotNull(message = "{required.error.message}")
     private Category category;
 
     @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)

@@ -1,18 +1,21 @@
 package com.centricsoftware.simpleproductapi.dto;
 
-import com.centricsoftware.simpleproductapi.controller.ProductController;
 import com.centricsoftware.simpleproductapi.json.CustomDateTimeISO8601Serializer;
 import com.centricsoftware.simpleproductapi.model.Product;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
-import java.util.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -23,16 +26,16 @@ import java.util.stream.Collectors;
 @Setter
 @Getter
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProductDTO {
 
     private UUID id;
-    @NotBlank(message = "Product name is required!")
+    @NotNull(message = "{required.error.message}")
+    @Size(min = 5, max = 100, message = "{name.length.required.error.message}")
     private String name;
     private String description;
-    @NotBlank(message = "Product brand is required!")
+    @NotBlank(message = "{required.error.message}")
     private String brand;
-    @NotBlank(message = "Product category is required!")
+    @NotBlank(message = "{required.error.message}")
     private String category;
     private Set<String> tags = new HashSet<>();
     @JsonProperty("created_at")
