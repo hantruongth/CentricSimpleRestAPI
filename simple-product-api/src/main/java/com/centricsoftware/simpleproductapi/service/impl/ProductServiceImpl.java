@@ -11,6 +11,7 @@ import com.centricsoftware.simpleproductapi.repository.ProductRepository;
 import com.centricsoftware.simpleproductapi.repository.TagRepository;
 import com.centricsoftware.simpleproductapi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -40,13 +41,13 @@ public class ProductServiceImpl implements ProductService {
 
         Product product = new Product();
 
-        Category category = categoryRepository.getCategoryByName(productDTO.getCategory());
+        Category category = categoryRepository.findCategoryByName(productDTO.getCategory());
         if(category == null) {
             category = new Category();
             category.setName(productDTO.getCategory());
         }
 
-        Brand brand = brandRepository.getBrandByName(productDTO.getBrand());
+        Brand brand = brandRepository.findBrandByName(productDTO.getBrand());
         if(brand == null) {
             brand = new Brand();
             brand.setName(productDTO.getBrand());
@@ -74,5 +75,25 @@ public class ProductServiceImpl implements ProductService {
 
         return productDTO;
 
+    }
+
+    @Override
+    public List<ProductDTO> searchPagingAndSortProductByCategory(String category, Integer pageNo, Integer pageSize, String sortBy) {
+
+        Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.DESC, sortBy));
+        Category c = categoryRepository.findCategoryByName(category);
+
+        List<Product> products = new ArrayList<>();
+        Slice<Product> productSlices;
+
+        if(c == null) {
+            productSlices = productRepository.findAll(paging);
+        } else {
+             productSlices = productRepository.findByCategory(c, paging);
+        }
+        if (productSlices.hasContent())
+            products = productSlices.getContent();
+
+        return products.stream().map(ProductDTO::convert).collect(Collectors.toList());
     }
 }

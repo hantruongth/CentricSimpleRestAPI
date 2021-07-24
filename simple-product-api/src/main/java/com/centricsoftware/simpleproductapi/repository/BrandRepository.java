@@ -14,5 +14,5 @@ import java.util.UUID;
 public interface BrandRepository extends JpaRepository<Brand, UUID> {
 
     @Query("Select b from Brand b where b.name = :name")
-    Brand getBrandByName(String name);
+    Brand findBrandByName(String name);
 }
