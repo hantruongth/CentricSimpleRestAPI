@@ -142,3 +142,10 @@ GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy
 <h2> API Documentation</h2>
 URL: http://localhost:8080/swagger-ui/ <br/>
 <img src="simple-product-api/src/main/resources/static/images/apidoc.JPG" width="800"/>
+
+<h2>Class Diagram</h2>
+<img src="simple-product-api/src/main/resources/static/images/ClassDiagram.png" width="1000"/>
+
+
+<h1>Author</h1>
+<strong>Han Truong</strong> - <a href="https://www.hantruong.us" target="_blank">https://www.hantruong.us</a>

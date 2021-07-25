@@ -15,9 +15,13 @@ Password:<br/>
 <img src="images/h2.JPG" width="600"/><br/>
 <img src="images/db.png" width="800"/><br/>
 
+<h2>Run Application</h2>
+<strong>Windows</strong>: mvnw spring-boot:run <br/>
+<strong>Linux</strong>: ./mvnw spring-boot:run
+
 
 <h2>Add New Product</h2>
-POST - http://localhost:8080/v1/products
+POST - http://localhost:8080/v1/products?lang=fr
 <h3>Request Body</h3>
 <pre><code>
 {
@@ -50,10 +54,10 @@ POST - http://localhost:8080/v1/products
     "created_at": "2021-07-23T22:14:57Z"
 }
 </code></pre>
-<img src="images/add.png" width="500"/>
+<img src="images/add.png" width="800"/>
 
 <h2>Search Product by Category Name</h2>
-GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy=createdDate
+GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy=createdDate&lang=en
 <h3>Response</h3>
 <pre><code>
 [
@@ -130,6 +134,27 @@ GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy
 ]
 
 </code></pre>
-<img src="images/search.png" width="600"/>
+<img src="images/search.png" width="800"/>
+
+<h2>Test Execution</h2>
+<img src="images/test1.png" width="800"/>
+
+
+<h2>Locale Messages<h2>
+
+    <img src="images/locale1.JPG" width="800"/><br/>
+    <img src="images/locale2.png" width="800"/>
+
+
+    <h2> API Documentation</h2>
+    URL: http://localhost:8080/swagger-ui/ <br/>
+    <img src="images/apidoc.JPG" width="800"/>
+
+    <h2>Class Diagram</h2>
+    <img src="images/ClassDiagram.png" width="1000"/>
+
+
+    <h1>Author</h1>
+    <strong>Han Truong</strong> - <a href="https://www.hantruong.us" target="_blank">https://www.hantruong.us</a>
 </body>
 </html>
