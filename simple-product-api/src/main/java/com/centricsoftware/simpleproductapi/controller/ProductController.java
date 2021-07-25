@@ -20,17 +20,16 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping()
-    public ResponseEntity<ProductDTO> addNewProduct(@RequestBody @Valid ProductDTO productDTO){
+    public ResponseEntity<ProductDTO> addNewProduct(@RequestBody @Valid ProductDTO productDTO) {
         return ResponseEntity.ok(productService.addProduct(productDTO));
     }
 
     @GetMapping()
-    public ResponseEntity<List<ProductDTO>> searchPagingAndSortProductByCategory(
+    public List<ProductDTO> searchPagingAndSortProductByCategory(
             @RequestParam(required = false) String category,
             @RequestParam(defaultValue = "0") Integer pageNo,
             @RequestParam(defaultValue = "10") Integer pageSize,
-            @RequestParam(defaultValue = "createdDate") String sortBy)
-    {
-        return ResponseEntity.ok(productService.searchPagingAndSortProductByCategory(category, pageNo, pageSize, sortBy));
+            @RequestParam(defaultValue = "createdDate") String sortBy) {
+        return productService.searchPagingAndSortProductByCategory(category, pageNo, pageSize, sortBy);
     }
 }

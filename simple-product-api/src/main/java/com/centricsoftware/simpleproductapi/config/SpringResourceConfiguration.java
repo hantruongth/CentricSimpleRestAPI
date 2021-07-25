@@ -43,6 +43,7 @@ public class SpringResourceConfiguration implements WebMvcConfigurer {
 
     /**
      * this bean will detect the request param lang in the url
+     *
      * @return
      */
     @Bean

@@ -1,7 +1,9 @@
 package com.centricsoftware.simpleproductapi.model;
 
 import javax.persistence.*;
-import java.util.*;
+import java.util.Date;
+import java.util.Objects;
+import java.util.UUID;
 
 /**
  * @author hantruong
@@ -23,8 +25,6 @@ public class Tag implements DatabaseEntity{
     public Tag(String name) {
         this.name = name;
     }
-//    @ManyToMany(mappedBy = "product", fetch = FetchType.LAZY)
-//    private Set<Product> products = new HashSet<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_date")

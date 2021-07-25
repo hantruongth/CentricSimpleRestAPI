@@ -27,6 +27,13 @@ public class Brand implements DatabaseEntity{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand")
     private List<Product> products = new ArrayList<>();
 
+    public Brand() {
+    }
+
+    public Brand(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

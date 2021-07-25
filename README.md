@@ -14,7 +14,7 @@ Password:<br/>
 
 
 <h2>Add New Product</h2>
-POST - http://localhost:8080/v1/products
+POST - http://localhost:8080/v1/products?lang=fr
 <h3>Request Body</h3>
 <pre><code>
 {
@@ -47,10 +47,10 @@ POST - http://localhost:8080/v1/products
     "created_at": "2021-07-23T22:14:57Z"
 }
 </code></pre>
-<img src="simple-product-api/src/main/resources/static/images/add.png" width="500"/>
+<img src="simple-product-api/src/main/resources/static/images/add.png" width="800"/>
 
 <h2>Search Product by Category Name</h2>
-GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy=createdDate
+GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy=createdDate&lang=en
 <h3>Response</h3>
 <pre><code>
 [
@@ -127,9 +127,18 @@ GET - http://localhost:8080/v1/products?category=Test&pageNo=0&pageSize=5&sortBy
 ]
 
 </code></pre>
-<img src="simple-product-api/src/main/resources/static/images/search.png" width="600"/>
+<img src="simple-product-api/src/main/resources/static/images/search.png" width="800"/>
+
+<h2>Test Execution</h2>
+<img src="simple-product-api/src/main/resources/static/images/test1.png" width="800"/>
+
+
+<h2>Locale Messages<h2>
+
+<img src="simple-product-api/src/main/resources/static/images/locale1.JPG" width="800"/><br/>
+<img src="simple-product-api/src/main/resources/static/images/locale2.png" width="800"/>
 
 
 <h2> API Documentation</h2>
 URL: http://localhost:8080/swagger-ui/ <br/>
-<img src="simple-product-api/src/main/resources/static/images/apidoc.JPG" width="600"/>
+<img src="simple-product-api/src/main/resources/static/images/apidoc.JPG" width="800"/>

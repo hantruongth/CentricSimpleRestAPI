@@ -7,7 +7,7 @@ import java.util.*;
  * @author hantruong
  */
 @Entity
-public class Category implements DatabaseEntity{
+public class Category implements DatabaseEntity {
 
     @Id
     @Column(name = "category_id")
@@ -26,6 +26,13 @@ public class Category implements DatabaseEntity{
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private List<Product> products = new ArrayList<>();
+
+    public Category() {
+    }
+
+    public Category(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;

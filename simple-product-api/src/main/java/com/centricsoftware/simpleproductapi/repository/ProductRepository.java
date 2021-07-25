@@ -16,4 +16,5 @@ import java.util.UUID;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, UUID>, PagingAndSortingRepository<Product, UUID> {
     Slice<Product> findByCategory(Category c, Pageable pageable);
+    Product findByName(String name);
 }
